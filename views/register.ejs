@@ -1,0 +1,100 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+    <title>Vote KPT ESPORT</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/pricing/">
+    <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200&amp;family=Press+Start+2P&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/4.0/examples/pricing/pricing.css" rel="stylesheet">
+  </head>
+  <body>
+  
+    <div class="d-flex flex-column flex-md-row align-items-center m-5 p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+      <h5 class="my-0 mr-md-auto font-weight-normal"><b style="font-family: 'Press Start 2P', cursive;">KPT ESPORT VOTE</b> </h5>
+      <nav class="my-2 my-md-0 mr-md-3">
+        <a class="p-2 text-dark" href="/"><b>Main</b></a>
+        <a class="p-2 text-dark" href="/login"><b>Login</b></a>
+        <a class="p-2 text-dark" href="/register"><b>Register</b></a>
+      </nav>
+      <a class="btn btn-outline-primary btn-sm" href="#"><b>Contact ADMIN</b></a>
+    </div>
+  
+    <div class="pricing-header px-3 py- pt-md-5 pb-md-4 mx-auto text-center aleft">
+      <h1 class="display-4 " style = "text-decoration: underline;"><b>ESPORT</b> <b>VOTE</b></h1>
+      <p>เกิดปัญหาในการเข้าสู่ระบบติดต่อเจ้าของเว็บไซต์โดยด่วน !</p>
+    </div>
+  
+    <div class="container abottom my-5">
+        <div class="container login-container">
+            <div class="card login-form">
+              <h2 class="text-left mb-4"><b style="font-size:1.2rem;">LOGIN KPT VOTE</b></h2>
+              <form id="formregister" action="/api/register" method="POST">
+                <div class="form-group">
+                  <label for="username"> <b><i class="bi bi-person-fill"></i> Username</b></label>
+                  <input type="text" class="form-control" id="username" name ="username" placeholder="Enter your username" required>
+                </div>
+                <div class="form-group">
+                    <label for="username"> <b><i class="bi bi-person-fill"></i> Email@Gmail.com</b></label>
+                    <input type="text" class="form-control" id="email" name ="email" placeholder="Enter your Email@gmail.com" required>
+                  </div>
+                <div class="form-group">
+                  <label for="password"><b><i class="bi bi-person-fill"></i> Password</b></label>
+                  <input type="password" class="form-control" name="password" id="Password" placeholder="Enter your password" required>
+                </div>
+                <div class="form-group">
+                    <label for="password"><b><i class="bi bi-person-fill"></i> Password</b></label>
+                    <input type="password" class="form-control" name="rePassword" id="Password" placeholder="Enter your password" required>
+                  </div>
+                <div class="g-recaptcha" data-sitekey="6LejyCcpAAAAAJZzdWeLlVF0WAbDdm_N7l4VSg5U"></div><br>
+                <button type="button" class="btn btn-primary btn-block" onclick="submitForm()">LOGIN TO WEBSITE</button>
+              </form>
+            </div>
+          </div>    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script>
+        function onSubmit(token) {
+          document.getElementById("demo-form").submit();
+        }
+      </script>
+      <script>
+        function submitForm() {
+           var captchaResponse = grecaptcha.getResponse();
+           if (captchaResponse === "") {
+              alert("Verify CAPTCHA FIRST !");
+              return;
+           }
+
+           document.getElementById("formregister").submit();
+        }
+     </script>
+  </body></html>
+  <% if(err != null && err.length > 0 ) { %>
+    <% for(let i = 0; i < err.length; i++) { %>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener('mouseenter', Swal.stopTimer)
+              toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+          })
+          Toast.fire({
+            icon: 'error',
+            title: "<%= err[i] %>"
+          })</script>
+          <% } %>
+    <% } %>

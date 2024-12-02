@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300&display=swap');
+.header{
+    background-color: #fa87dd;
+}
+
+p,h1{
+ font-family: 'Sarabun';
+}
+.login-container {
+    max-width: 400px;
+    margin: auto;
+    margin-top: 20px;
+  }
+
+  .login-form {
+    padding: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    background-color: #ffffff;
+  }
+
+.w3-spin{animation:w3-spin 2s infinite linear}@keyframes w3-spin{0%{transform:rotate(0deg)}100%{transform:rotate(359deg)}}
+.afading{animation:fading 10s }@keyframes fading{0%{opacity:0}100%{opacity:1}}
+.aopacity{animation:opac 0.8s}@keyframes opac{from{opacity:0} to{opacity:1}}
+.atop{position:relative;animation:animatetop 0.4s}@keyframes animatetop{from{top:-300px;opacity:0} to{top:0;opacity:1}}
+.aleft{position:relative;animation:animateleft 0.6s}@keyframes animateleft{from{left:-300px;opacity:0} to{left:0;opacity:1}}
+.aright{position:relative;animation:animateright 0.4s}@keyframes animateright{from{right:-300px;opacity:0} to{right:0;opacity:1}}
+.abottom{position:relative;animation:animatebottom 0.6s}@keyframes animatebottom{from{bottom:-300px;opacity:0} to{bottom:0;opacity:1}}
+.azoom {animation:animatezoom 0.6s}@keyframes animatezoom{from{transform:scale(0)} to{transform:scale(1)}}
+.afading2{animation:fading 7s }@keyframes fading{0%{opacity:0}100%{opacity:1}}
+.fading{animation:fading 10s infinite}@keyframes fading{0%{opacity:0}50%{opacity:1}100%{opacity:0}}
+@keyframes floatAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
+.boxs{
+  animation: floatAnimation 2s infinite alternate;
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.386);
+    color: rgb(0, 0, 0);
+    text-align: center;
+ }
